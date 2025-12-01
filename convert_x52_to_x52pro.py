@@ -14,7 +14,8 @@
 
 # 2025/12/01 - Updated by stevious
 # This update allows the conversion of X52 profiles to X52Pro profiles - it effectively just performs the reverse
-# of the base project.
+# of the base project. Many thanks to Kilian for the original code, which made this project trivial to implement :)
+
 import re
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
@@ -137,7 +138,7 @@ class gui(tk.Tk):
     def convert(self):
         # path = r'C:/Users/Public/Documents/Logitech/X52/F-15C original.pr0'
         file_name = re.search(r'[^/]+(?=\.pr0$)', self.file_path.get()).group(0)
-        new_file = file_name + "_converted.pr0"
+        new_file = file_name + "_to_x52pro.pr0"
         new_path = re.sub("{}{}".format(file_name, '.pr0'), new_file, self.file_path.get())
 
 

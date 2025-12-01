@@ -12,6 +12,9 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
+# 2025/12/01 - Updated by stevious
+# Minor tweak to modify the output filename, to make it clear what type of conversion took place.
+
 import re
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
@@ -134,7 +137,7 @@ class gui(tk.Tk):
     def convert(self):
         # path = r'C:/Users/Public/Documents/Logitech/X52/F-15C original.pr0'
         file_name = re.search(r'[^/]+(?=\.pr0$)', self.file_path.get()).group(0)
-        new_file = file_name + "_converted.pr0"
+        new_file = file_name + "_to_x52.pr0"
         new_path = re.sub("{}{}".format(file_name, '.pr0'), new_file, self.file_path.get())
 
 
